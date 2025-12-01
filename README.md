@@ -15,7 +15,7 @@ Research Question:
 How do environmental fluctuations inside a typical apartment (temperature, humidity, VOC levels, pressure) influence the health and stress response of a Peace Lily over 24 hours?
 
 
-Repositery Structure Tree
+Repositery Structure Tree (BREAKDOWN)
 
 README.md
 'Main project description, setup instructions, features, and documentation links'
