@@ -10,15 +10,6 @@ VOC concentration and
 Atmospheric pressure
 
 
-
-
-
-
-
-
-
-
-
 Data is streamed via MQTT or serial, stored following FAIR data principles, processed using Python, and visualised on an interactive Plotly Dash dashboard with a continuously updated plant Health Score.
 
 Research Question:
