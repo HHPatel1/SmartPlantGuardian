@@ -1,1 +1,7 @@
+{
+  "temperature_offset": 0.6,
+  "humidity_offset": -1.8,
+  "voc_baseline_method": "BSEC automatic baseline",
+  "pressure_offset": 0.0
+}
 
