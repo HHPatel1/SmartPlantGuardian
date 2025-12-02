@@ -76,7 +76,7 @@ def save(ts_iso, payload):
         conn = sqlite3.connect(DB_PATH, timeout=10)
         c = conn.cursor()
         c.execute("""
-            INSERT INTO readings (timestamp, temperature, humidity, voc, pressure, device_id, experiment_id, raw_json)
+            INSERT INTO readings (timestamp, temperature, humidity, voc, pressure, experiment_id)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """, (ts_iso,
               payload.get("temperature"),
