@@ -1,1 +1,10 @@
 
+{
+  "ideal": {
+    "temperature": {"min": 20, "max": 27},
+    "humidity": {"min": 50, "max": 70},
+    "voc": {"max": 200},
+    "pressure": {"min": 995, "max": 1030}
+  }
+}
+
