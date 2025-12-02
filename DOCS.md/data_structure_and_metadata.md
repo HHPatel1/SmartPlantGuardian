@@ -4,11 +4,11 @@
 ## Data files
 `data/raw/*.csv`  
 Daily raw logs. Each row includes:
-timestamp, temperature, humidity, voc, pressure, device_id, experiment_id, raw_json
+timestamp, temperature, humidity, voc, pressure, experiment_id
 
 `data/database/plant_data.sqlite`  
 Master SQL table:
-readings(id, timestamp, temperature, humidity, voc, pressure, device_id, experiment_id, raw_json)
+readings(id, timestamp, temperature, humidity, voc, pressure, experiment_id)
 
 ## Metadata
 ### experiment_info.json
