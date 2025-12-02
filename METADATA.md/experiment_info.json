@@ -1,1 +1,12 @@
 
+{
+  "experiment_id": "SPG-REAL-001",
+  "plant_species": "Peace Lily",
+  "location": "Home Apartment - Living Room",
+  "sampling_interval_seconds": 15,
+  "hardware": {
+    "sensor": "Nicla Sense ME",
+    "transmitter": "Arduino MKR WiFi 1010"
+  }
+}
+
