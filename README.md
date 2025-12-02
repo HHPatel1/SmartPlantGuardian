@@ -1,18 +1,24 @@
-Smart Plant Guardian 🌿
+🌿 Smart Plant Guardian 🌿 - OVERVIEW 
 A fully automated, data-driven environmental monitoring system for Peace Lily health assessment.
 
-Project Overview
-Smart Plant Guardian is an end-to-end environmental sensing and analytics system designed to measure and interpret the real-time health conditions of a Peace Lily (Spathiphyllum) in a typical apartment environment. Using an Arduino Nicla Sense ME (or MKR WiFi), the system continuously records:
+Smart Plant Guardian is an end-to-end IoT system for monitoring Peace Lily plant health using real sensors (Nicla Sense ME), wireless data transfer (MKR WiFi 1010 via MQTT), structured storage (SQLite + CSV), and a live analytical dashboard (Dash / Plotly).
 
-Temperature,
-Humidity,
-VOC concentration and 
-Atmospheric pressure
+The system captures:
+- Temperature (°C)
+- Humidity (%)
+- VOC gas index (BSEC)
+- Pressure (hPa)
 
-
-Data is streamed via MQTT or serial, stored following FAIR data principles, processed using Python, and visualised on an interactive Plotly Dash dashboard with a continuously updated plant Health Score.
+Data is captured every 15 seconds for experimental analysis.
 
 Research Question:
 How do environmental fluctuations inside a typical apartment (temperature, humidity, VOC levels, pressure) influence the health and stress response of a Peace Lily over 24 hours?
 
-*** Use 'NAVIGATION' FOLDER for a walkthrough of this repositery ***
+This repo includes:
+- Full Arduino firmware for Nicla and MKR WiFi
+- MQTT subscriber
+- SQLite database builder
+- Dash dashboard
+- Machine-learning ready data
+- Documentation, metadata, and test suite
+
