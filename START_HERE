@@ -1,1 +1,270 @@
 
+🌱 Welcome
+
+This guide gives you one simple path to install, run, and explore the Smart-Plant-Guardian system.
+Total setup time: 5 minutes.
+
+For detailed documentation, see:
+
+README.md
+
+docs/project_overview.md
+
+
+
+---
+
+1️⃣ Requirements
+
+Hardware (for live data)
+
+Arduino Nicla Sense ME
+
+Arduino MKR WiFi 1010
+
+USB cables
+
+WiFi or Personal Hotspot (or Cedalo MQTT broker)
+
+
+Software
+
+Python 3.10+
+
+Git
+
+Pip or Conda
+
+
+
+---
+
+2️⃣ Clone the Repository
+
+git clone https://github.com/<your-username>/Smart-Plant-Guardian.git
+cd Smart-Plant-Guardian
+
+
+---
+
+3️⃣ Create Python Environment
+
+python3 -m venv .venv
+source .venv/bin/activate      # macOS/Linux
+.venv\Scripts\activate         # Windows
+
+pip install -r requirements.txt
+
+
+---
+
+4️⃣ Create Your .env File
+
+Create a file at the project root named .env with:
+
+MQTT_BROKER=pf-eveoxy0ua6xhtbdyohag.cedalo.cloud
+MQTT_PORT=1883
+MQTT_TOPIC=smartplant/real/#
+
+SERIAL_PORT=/dev/tty.usbmodemXXXX
+SERIAL_BAUD=115200
+
+SQLITE_DB=data/database/plant_data.sqlite
+
+EMAIL_USER=smartplantlabs@outlook.com
+EMAIL_PASS=YOUR_APP_PASSWORD
+
+
+---
+
+5️⃣ Initialise the SQLite Database
+
+Run this once:
+
+python - <<'EOF'
+from src.utils.db_helpers import create_tables
+create_tables()
+print("Database initialised ✔")
+EOF
+
+This creates:
+
+data/database/plant_data.sqlite
+
+data/raw/ folder (empty)
+
+
+
+---
+
+6️⃣ Choose How Data Will Be Collected
+
+
+---
+
+Option A — MQTT Mode (MKR WiFi 1010)
+
+1. Upload src/acquisition/arduino/mkr_wifi_plant_mqtt.ino
+
+
+2. Start the MQTT subscriber:
+
+
+
+python src/acquisition/mqtt_subscriber.py
+
+You should now see new data arriving in the DB.
+
+
+---
+
+Option B — Serial Mode (Nicla Sense ME)
+
+
+1. Upload nicla_sense_plant_sensor.ino
+
+
+2. Run:
+
+
+
+python src/acquisition/serial_subscriber.py
+
+
+---
+
+7️⃣ Launch the Dashboard
+
+Open a second terminal:
+
+python src/dashboard/dashboard.py
+
+Then open:
+http://127.0.0.1:8050
+
+You will see:
+
+Temperature graph
+
+Humidity graph
+
+VOC graph
+
+Pressure graph
+
+Plant health score
+
+Plant photo
+
+Email alert tab
+
+
+
+---
+
+8️⃣ Where Your Data Goes
+
+Raw CSV
+
+
+data/raw/readings_YYYY-MM-DD.csv
+
+SQLite Database
+
+data/database/plant_data.sqlite
+Contains timestamps, sensor values & metadata.
+
+Metadata
+
+metadata/*.json
+Experiment info, calibration details, peace lily profile.
+
+
+---
+
+9️⃣ Analysis (Optional)
+
+jupyter notebook src/analysis/exploratory_analysis.ipynb
+
+
+---
+
+🔟 Running Tests
+
+pytest -q
+
+
+---
+
+1️⃣1️⃣ Troubleshooting
+
+Dashboard shows “No Data”
+
+Is MQTT subscriber running?
+
+Or Serial subscriber?
+
+Check the database size with:
+
+
+sqlite3 data/database/plant_data.sqlite "SELECT COUNT(*) FROM readings;"
+
+Serial Port Busy
+
+Close Arduino IDE Serial Monitor. Only one app can access the port.
+
+MQTT not connecting
+
+Try:
+
+mosquitto_sub -h pf-eveoxy0ua6xhtbdyohag.cedalo.cloud -t "#" -v
+
+
+---
+
+1️⃣2️⃣ Quick Demo (No Hardware Needed)
+
+1. Drop any CSV into data/raw/
+
+
+2. Run:
+
+
+
+python src/utils/csv_to_sqlite.py
+python src/dashboard/dashboard.py
+
+Dashboard loads historical data.
+
+
+---
+
+1️⃣3️⃣ Explore More
+
+docs/project_overview.md — full explanation
+
+docs/data_structure_and_metadata.md — how the DB works
+
+docs/peace_lily_care_profile.md — plant science
+
+src/utils/compute_health_score.py — health algorithm
+
+
+
+---
+
+🎉 You’re Ready
+
+You now have everything needed to:
+
+
+collect real sensor data
+
+store it using FAIR principles
+
+visualise it live
+
+analyse plant health
+
+extend the system
+
