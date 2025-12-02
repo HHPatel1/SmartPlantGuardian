@@ -1,12 +1,11 @@
-Sensor Calibration Methodology for Smart Plant Guardian
-To ensure accurate and reliable environmental measurements for the Peace Lily monitoring system, each sensor in the Smart Plant Guardian was calibrated using practical, accessible reference methods. The calibration procedures are designed to produce reproducible results while maintaining scientific rigor.
-1. Temperature Calibration
-The temperature sensor was calibrated against a high-accuracy digital thermometer. The Arduino sensor was placed adjacent to the reference thermometer at plant height and allowed to stabilize for 15–30 minutes. Multiple readings were recorded, and a linear calibration model was derived using two reference points. This corrects for sensor offset and scaling errors, ensuring temperature measurements accurately reflect environmental conditions.
-2. Humidity Calibration
-The humidity sensor was calibrated using a salt-based reference method. The sensor was placed inside a sealed plastic bag containing a saturated solution of table salt and a small amount of water. Over 3-6 hours, the relative humidity stabilized at approximately 75%, providing a reliable reference point. A linear calibration model was applied to convert raw sensor readings to calibrated relative humidity values. Optionally, a low-humidity reference was obtained using a desiccant.
-3. Pressure Calibration
-Atmospheric pressure measurements were calibrated against a reference value obtained from a smartphone weather application. The sensor was positioned alongside the reference device, and readings were compared to determine an offset or linear correction. This ensures that pressure data accurately reflect ambient conditions without requiring specialized equipment.
-4. VOC (Volatile Organic Compounds) Calibration
-VOC sensor calibration was based on establishing a clean-air baseline. The sensor was exposed to well-ventilated air to determine a stable baseline reading under minimal VOC conditions. Subsequent VOC measurements are expressed relative to this baseline, providing a consistent and reproducible index of air quality fluctuations relevant to plant stress.
-Integration into Code
-All calibration coefficients and baseline values are incorporated directly into the data acquisition code. This ensures that raw sensor readings are automatically converted to calibrated values in real time. By integrating calibration into the code, the system consistently delivers accurate measurements for temperature, humidity, pressure, and VOC levels, supporting reliable plant health assessment and visualization.
+
+# Sensor Calibration Notes
+Nicla Sense ME sensors were baseline-calibrated indoors for 30 minutes at rest.
+
+Temperature offset: +0.6°C  
+Humidity offset: -1.8%  
+VOC baseline (R0): captured using BSEC library automatic baseline tracking.  
+Pressure: verified against local weather station API ±0.5 hPa.
+
+These offsets are applied inside analysis scripts, not firmware.
+
