@@ -15,4 +15,4 @@ Data is streamed via MQTT or serial, stored following FAIR data principles, proc
 Research Question:
 How do environmental fluctuations inside a typical apartment (temperature, humidity, VOC levels, pressure) influence the health and stress response of a Peace Lily over 24 hours?
 
-USE NAVIGATION FOR A WALKTHROUGH OF THIS REPOSITERY
+USE 'NAVIGATION' FOLDER FOR A WALKTHROUGH OF THIS REPOSITERY
