@@ -22,3 +22,5 @@ This repo includes:
 - Machine-learning ready data
 - Documentation, metadata, and test suite
 
+USE THE 'START_HERE' folder as a guide through this repositery!
+
