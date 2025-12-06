@@ -1,4 +1,4 @@
-🌿 Smart Plant Guardian 🌿 - OVERVIEW 
+🌿 Smart Plant Guardian 🌿 
 A fully automated, data-driven environmental monitoring system for Peace Lily health assessment.
 
 Smart Plant Guardian is an end-to-end IoT system for monitoring Peace Lily plant health using real sensors (Nicla Sense ME), wireless data transfer (MKR WiFi 1010 via MQTT), structured storage (SQLite + CSV), and a live analytical dashboard (Dash / Plotly).
