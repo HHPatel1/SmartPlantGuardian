@@ -1,0 +1,70 @@
+Smart-Plant-Guardian/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── docs/
+│   ├── project_overview.md
+│   ├── data_structure_and_metadata.md
+│   ├── risk_assessment.pdf
+│   ├── system_diagram.png
+│   ├── dashboard_screenshots
+│   ├── calibration_notes.md
+│   └── peace_lily_care_profile.md
+│
+├── data/
+│
+│    ├── readings_2025-26-11.csv            
+│    ├── readings_2025-26-11.db            
+│                    
+│
+├── metadata/
+│   ├── experiment_info.json                   
+│   ├── sensor_calibration.json                
+│   └── plant_profile_peacelily.Json           
+│
+├── src/
+│   ├── acquisition/
+│   │   ├── mqtt_subscriber.py                 
+│   │   ├── serial_subscriber.py               
+│   │   └── arduino/
+│   │       ├── nicla_sense_plant_sensor.ino   
+│   │       └── mkr_wifi_plant_mqtt.ino        
+│   │
+│   ├── dashboard/
+│   │   ├── dashboard.py
+│   │   ├── components/
+│   │   │   ├── health_card.py
+│   │   │   ├── graphs.py
+│   │   │   ├── email_tab.py
+│   │   │   └── plant_image.py
+│   │   └── assets/
+│   │       └── style.css
+│   │
+│   ├── analysis/
+│   │   ├── exploratory_analysis.ipynb          
+│   │   └── health_score.py                     
+│   │
+│   └── utils/
+│       ├── compute_health_score.py             
+│       ├── db_helpers.py
+│       ├── email_sender.py
+│       └── real_data_helpers.py                
+│
+├── results/
+│   ├── figures/
+│   │   ├── temp_plot.png                       
+│   │   ├── humidity_plot.png
+│   │   ├── voc_plot.png
+│   │   └── pressure_plot.png
+│   ├── analysis_reports/
+│       └── 24h_data_summary.pdf
+│   
+│       
+│
+└── tests/
+    ├── test_database.py
+    ├── test_health_score.py
+    ├── test_dashboard_components.py
+    └── test_acquisition_real.py                
